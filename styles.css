@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com');
+
+:root {
+  --background: #0d0d0d;
+  --card-bg: #161616;
+  --accent: #e67e22;
+  --text-main: #ffffff;
+  --text-dim: #a0a0a0;
+  --border: #2a2a2a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.6;
+}
+
+header {
+  padding: 80px 20px;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+header p {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px 20px;
+}
+
+.pack-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 30px;
+  width: 340px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.pack-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(230, 126, 34, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 5px;
+}
+
+.badge-count {
+  background: var(--accent);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.lista-presets {
+  margin: 20px 0;
+  padding: 10px;
+  list-style: none;
+  background: rgba(255,255,255,0.03);
+}
+
+.lista-presets li {
+  padding: 8px 0;
+  border-bottom: 1px solid #222;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+/* Área de ação (agora substitui a compra) */
+.actions-area {
+  margin-top: 30px;
+}
+
+.btn-info {
+  background: transparent !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  animation: button-glow 2s infinite ease-in-out;
+}
+
+.btn-info:hover {
+  background: var(--accent) !important;
+  color: #000 !important;
+}
+
+/* NOVO botão de download */
+.btn-download {
+  display: block;
+  background: var(--accent);
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  padding: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.btn-download:hover {
+  background: var(--text-main);
+  color: #000;
+  transform: scale(1.02);
+}
+
+audio {
+  width: 100%;
+  margin-top: 15px;
+  height: 30px;
+  filter: invert(1);
+}
+
+@keyframes button-glow {
+  0% { box-shadow: 0 0 5px rgba(230, 126, 34, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(230, 126, 34, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(230, 126, 34, 0.3); }
+}

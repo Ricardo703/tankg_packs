@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impulse response para Tank-G | Metallica & Megadeth</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Dica prática: confirme que styles.css está na mesma pasta do index.html.
+         Se estiver em subpasta (ex.: css/styles.css), ajuste o href acima. -->
+  </head>
+  <body>
+    <header>
+      <h1>Tank-G Premium Packs</h1>
+      <p>Timbre profissional para sua M-Vave</p>
+    </header>
+
+    <main class="container">
+      <!-- Card Metallica -->
+      <section class="pack-card">
+        <div class="card-header">
+          <h2>Metallica Signature</h2>
+          <span class="badge-count">4 Irs</span>
+        </div>
+        <p>Os clássicos do Metallica.</p>
+
+        <label>Ouça a prévia:</label>
+        <audio controls>
+          <!-- Importante: a pasta 'audios' deve existir e conter este arquivo exatamente com este nome.
+               Se o arquivo for .mp3/.wav em vez de .m4a, altere aqui também o type (ex.: audio/mpeg).
+               Se der 404 no teste, cheque nome, espaços e extensão (inclusive maiúsculas em sistemas diferentes). -->
+          <source src="audios/(Audio) 2026-03-12 18-06-07.m4a" type="audio/mp4" />
+        </audio>
+
+        <button class="btn-info" onclick="toggleConteudo('lista-met')">
+          Ver o que vem no Pack ↓
+        </button>
+
+        <ul id="lista-met" class="lista-presets" style="display: none">
+          <li>🎸 Black album</li>
+          <li>🎸 Master of Puppets</li>
+          <li>🎸 And justice for all</li>
+          <li>🎸 Ride the Lightning</li>
+        </ul>
+
+        <div class="actions-area">
+          <!-- Importante: a pasta 'ir-zips' deve existir e ter 'metallica.zip' dentro.
+               O atributo 'download' tenta forçar download; opcionalmente dá para sugerir nome:
+               download="metallica-ir-pack.zip" (alguns servidores respeitam, outros não). -->
+          <a href="ir-zips/IR Metallica.zip" class="btn-download" download="metallica-ir-pack.zip">
+            Baixar IRs
+          </a>
+          <!-- Observação para você no VS Code: ao colocar o ZIP, abra-o depois para garantir que abriu com conteúdo.
+               Se você tiver arquivos .rar, converta para .zip ou ajuste o href/extensão (RAR nem sempre baixa “bonito” no browser). -->
+        </div>
+      </section>
+
+      <!-- Card Megadeth -->
+      <section class="pack-card">
+        <div class="card-header">
+          <h2>Megadeth Thrash</h2>
+          <span class="badge-count">3 Irs</span>
+        </div>
+        <p>O som cortante de Dave Mustaine.</p>
+
+        <label>Ouça a prévia:</label>
+        <audio controls>
+          <!-- Mesma dica: confira nome da pasta/arquivo e o type conforme o formato real da sua prévia. -->
+          <source src="audios/(Audio) 2026-03-12 18-48-24.m4a" type="audio/mp4" />
+        </audio>
+
+        <button class="btn-info" onclick="toggleConteudo('lista-mega')">
+          Ver o que vem no Pack ↓
+        </button>
+
+        <ul id="lista-mega" class="lista-presets" style="display: none">
+          <li>🔥 Rust in peace</li>
+          <li>🔥 Youthanasia</li>
+          <li>🔥 Countdown To Extintion</li>
+        </ul>
+
+        <div class="actions-area">
+          <!-- Dica de nome sugerido no download: isso ajuda o usuário a identificar o pack pós-download.
+               Se o arquivo tiver nome diferente (ex.: megadeth-pack-final.zip), mude o href e/ou o download. -->
+          <a href="ir-zips/IR Megadeth.zip" class="btn-download" download="megadeth-ir-pack.zip">
+            Baixar IRs
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Função simples para exibir/ocultar a lista dos presets; funciona bem e não precisa mudar
+      function toggleConteudo(id) {
+        var lista = document.getElementById(id);
+        if (lista.style.display === "none") {
+          lista.style.display = "block";
+        } else {
+          lista.style.display = "none";
+        }
+      }
+      // Dica rápida: se ao testar as prévias “pararem” depois de um load, normalmente é problema
+      // de caminho, tipo errado ou arquivo corrompido. No console (F12) dá para ver o erro exato.
+    </script>
+  </body>
+</html>
